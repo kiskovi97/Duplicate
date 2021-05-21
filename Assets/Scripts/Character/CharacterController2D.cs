@@ -63,6 +63,11 @@ namespace Assets.Scripts.Character
 			}
 		}
 
+		public void ForceJump()
+		{
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+		}
+
 
 		public void Move(float move, bool crouch, bool jump)
 		{

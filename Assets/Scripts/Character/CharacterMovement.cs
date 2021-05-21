@@ -33,9 +33,9 @@ namespace Assets.Scripts.Character
                 movement.Primal = false;
                 PrimalObj = this;
                 cloneCount++;
-                isJumping = true;
-                transform.position += Vector3.up * transform.localScale.y;
-                movement.isJumping = false;
+                transform.position += Vector3.up * transform.localScale.y * 0.5f;
+
+                controller2D.ForceJump();
             }
         }
 
