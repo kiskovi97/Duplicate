@@ -15,15 +15,28 @@ namespace Assets.Scripts.Character
     {
         public float maxSpeed = 10f;
         public float jumpForce = 10f;
+        public int maxNumberOfClones = 4;
 
-        protected new Rigidbody2D rigidbody2D;
         protected CharacterController2D controller2D;
         private float lastValue = 0f;
         private bool isJumping = false;
+        private bool Primal = true;
+        private static CharacterMovement PrimalObj;
+        private static int cloneCount = 1;
 
         public void OnDuplicate(InputAction.CallbackContext context)
         {
-            throw new NotImplementedException();
+            if (Primal && cloneCount < maxNumberOfClones)
+            {
+                var gameObj = Instantiate(gameObject, transform.position, transform.rotation);
+                var movement = gameObj.GetComponent<CharacterMovement>();
+                movement.Primal = false;
+                PrimalObj = this;
+                cloneCount++;
+                isJumping = true;
+                transform.position += Vector3.up * transform.localScale.y;
+                movement.isJumping = false;
+            }
         }
 
         public void OnJump(InputAction.CallbackContext context)
@@ -38,9 +51,10 @@ namespace Assets.Scripts.Character
 
         void Start()
         {
-            rigidbody2D = GetComponent<Rigidbody2D>();
             controller2D = GetComponent<CharacterController2D>();
             CharacterInputHandler.SetCallback(this);
+            if (Primal)
+                PrimalObj = this;
         }
 
         private void FixedUpdate()
