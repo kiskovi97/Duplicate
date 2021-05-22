@@ -24,6 +24,8 @@ namespace Assets.Scripts.Character
         private static CharacterMovement PrimalObj;
         private static int cloneCount = 1;
 
+        public Animator animator;
+
         public void OnDuplicate(InputAction.CallbackContext context)
         {
             if (Primal && cloneCount < maxNumberOfClones)
@@ -36,6 +38,9 @@ namespace Assets.Scripts.Character
                 transform.position += Vector3.up * transform.localScale.y * 0.5f;
 
                 controller2D.ForceJump();
+
+                animator.SetTrigger("CloneUp");
+                movement.animator.SetTrigger("CloneDown");
             }
         }
 
@@ -63,8 +68,11 @@ namespace Assets.Scripts.Character
             //if ((speed > 0f && rigidbody2D.velocity.x < 0f) || (speed < 0f && rigidbody2D.velocity.x > 0f))
             //    rigidbody2D.velocity = new Vector2(0f, rigidbody2D.velocity.y);
             //rigidbody2D.AddForce(Vector2.right * speed * Time.fixedDeltaTime, ForceMode2D.Impulse);
-
             controller2D.Move(speed, false, isJumping);
+            animator.SetBool("OnGround", controller2D.OnGround);
+            var info = animator.GetCurrentAnimatorStateInfo(0);
+            
+            animator.speed = Mathf.Abs(info.IsName("Walking") ? speed : 3f);
             isJumping = false;
         }
 

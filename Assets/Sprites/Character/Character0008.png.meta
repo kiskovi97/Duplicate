@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: bb9744fce09df7248b99d677370ad863
+guid: ebe117aa9e057b447aab0a3c0854d381
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8370606141135381190
-    second: C_Skeleton_0
+      213: 4685142653746300295
+    second: Character0008_0
   - first:
-      213: -1234422845093695582
-    second: C_Skeleton_1
+      213: -4397196857688752432
+    second: Character0008_1
   - first:
-      213: 6310558048085148403
-    second: C_Skeleton_2
+      213: 6289635288570551375
+    second: Character0008_2
   - first:
-      213: 8824835356207407516
-    second: C_Skeleton_3
-  - first:
-      213: -2606420409104381390
-    second: C_Skeleton_4
-  - first:
-      213: -9218542158975852517
-    second: C_Skeleton_5
+      213: -5341514354958594768
+    second: Character0008_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -143,13 +137,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: C_Skeleton_0
+      name: Character0008_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 47
-        width: 15
-        height: 26
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c2e31d9fed5a2470800000000000000
-      internalID: 8370606141135381190
+      spriteID: 785449eab68f40140800000000000000
+      internalID: 4685142653746300295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_Skeleton_1
+      name: Character0008_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 47
-        width: 19
-        height: 26
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2af209f66f27edee0800000000000000
-      internalID: -1234422845093695582
+      spriteID: 0de7ff951c40af2c0800000000000000
+      internalID: -4397196857688752432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_Skeleton_2
+      name: Character0008_2
       rect:
         serializedVersion: 2
-        x: 92
-        y: 47
-        width: 19
-        height: 27
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f209962c1b939750800000000000000
-      internalID: 6310558048085148403
+      spriteID: f4c520698f5494750800000000000000
+      internalID: 6289635288570551375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_Skeleton_3
+      name: Character0008_3
       rect:
         serializedVersion: 2
-        x: 131
-        y: 47
-        width: 19
-        height: 27
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,50 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c91ec00200d187a70800000000000000
-      internalID: 8824835356207407516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_Skeleton_4
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 7
-        width: 19
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23a4104827224dbd0800000000000000
-      internalID: -2606420409104381390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_Skeleton_5
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 7
-        width: 19
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1028439fb8211080800000000000000
-      internalID: -9218542158975852517
+      spriteID: 03d0b06aef02fd5b0800000000000000
+      internalID: -5341514354958594768
       vertices: []
       indices: 
       edges: []
@@ -271,7 +223,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: c0470fdd2169ac64caded8bd390d5e79
     internalID: 0
     vertices: []
     indices: 
