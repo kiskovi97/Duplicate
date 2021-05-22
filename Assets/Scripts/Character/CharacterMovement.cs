@@ -11,9 +11,24 @@ namespace Assets.Scripts.Character
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(CharacterController2D))]
-    class CharacterMovement : MonoBehaviour, CharacterControls.ICharacterActions
+    public class CharacterMovement : MonoBehaviour, CharacterControls.ICharacterActions
     {
         public float maxSpeed = 10f;
+
+        internal void DestoryPlayer()
+        {
+            clones.Remove(gameObject);
+            Destroy(gameObject);
+        }
+
+        internal static void Reset()
+        {
+            foreach(var gameObject in clones)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         public float jumpForce = 10f;
         public int maxNumberOfClones = 4;
 
@@ -22,22 +37,23 @@ namespace Assets.Scripts.Character
         private bool isJumping = false;
         private bool Primal = true;
         private static CharacterMovement PrimalObj;
-        private static int cloneCount = 1;
+        private static int CloneCount => clones.Count;
 
         public bool IsPrime => Primal;
         public static CharacterMovement PrimeObject => PrimalObj;
+        public static List<GameObject> clones = new List<GameObject>(); 
 
         public Animator animator;
 
         public void OnDuplicate(InputAction.CallbackContext context)
         {
-            if (Primal && cloneCount < maxNumberOfClones)
+            if (Primal && CloneCount < maxNumberOfClones)
             {
                 var gameObj = Instantiate(gameObject, transform.position, transform.rotation);
                 var movement = gameObj.GetComponent<CharacterMovement>();
                 movement.Primal = false;
                 PrimalObj = this;
-                cloneCount++;
+                clones.Add(gameObj);
                 transform.position += Vector3.up * transform.localScale.y * 0.5f;
 
                 controller2D.ForceJump();

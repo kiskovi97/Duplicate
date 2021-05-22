@@ -25,6 +25,9 @@ public class Level : MonoBehaviour
     internal void Load()
     {
         if (CharacterMovement.PrimeObject != null)
+        {
             CharacterMovement.PrimeObject.transform.position = startDoor.position;
+            CharacterMovement.Reset();
+        }
     }
 }

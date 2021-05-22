@@ -11,13 +11,13 @@ public class Obstacle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.gameObject.GetComponent<CharacterMovement>();
-        if (player != null && player.IsPrime && !collided)
+        if (player != null && !collided)
         {
             if (player.IsPrime)
             {
-                DoPrime();
+                DoPrime(player);
             }
-            DoAnyCollision();
+            DoAnyCollision(player);
             collided = true;
         }
     }
@@ -27,11 +27,11 @@ public class Obstacle : MonoBehaviour
         collided = false;
     }
 
-    protected virtual void DoAnyCollision()
+    protected virtual void DoAnyCollision(CharacterMovement player)
     {
     }
 
-    protected virtual void DoPrime()
+    protected virtual void DoPrime(CharacterMovement player)
     {
     }
 }

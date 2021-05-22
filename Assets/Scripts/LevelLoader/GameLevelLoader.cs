@@ -40,6 +40,22 @@ public class GameLevelLoader : MonoBehaviour
         }
     }
 
+    public static void _ReLoadLevel()
+    {
+        if (Instance != null)
+        {
+            Instance.ReLoadLevel();
+        }
+    }
+
+    private void ReLoadLevel()
+    {
+        currentLevel?.gameObject.SetActive(false);
+        Debug.Log(currentLevel?.gameObject.name + " Unload");
+        currentLevel?.gameObject.SetActive(true);
+        Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
+    }
+
     private void LoadNextLevel()
     {
         currentLevel?.gameObject.SetActive(false);

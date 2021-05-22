@@ -664,7 +664,6 @@ GameObject:
   - component: {fileID: 1938529745}
   - component: {fileID: 1938529744}
   - component: {fileID: 1938529747}
-  - component: {fileID: 1938529749}
   - component: {fileID: 1938529748}
   m_Layer: 0
   m_Name: Main Camera
@@ -787,7 +786,7 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 0
-  m_BlendUpdateMethod: 1
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -804,26 +803,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1938529749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938529743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!1001 &5687942777041657120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1328,22 +1307,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8989445651270321885, guid: d51c7bc22eb3f47458fc58529ac4126a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989445651415420372, guid: d51c7bc22eb3f47458fc58529ac4126a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989445651651783988, guid: d51c7bc22eb3f47458fc58529ac4126a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989445652055640024, guid: d51c7bc22eb3f47458fc58529ac4126a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8989445652578234498, guid: d51c7bc22eb3f47458fc58529ac4126a, type: 3}
       propertyPath: m_Name
       value: Constants
