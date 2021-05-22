@@ -24,6 +24,9 @@ namespace Assets.Scripts.Character
         private static CharacterMovement PrimalObj;
         private static int cloneCount = 1;
 
+        public bool IsPrime => Primal;
+        public static CharacterMovement PrimeObject => PrimalObj;
+
         public Animator animator;
 
         public void OnDuplicate(InputAction.CallbackContext context)
