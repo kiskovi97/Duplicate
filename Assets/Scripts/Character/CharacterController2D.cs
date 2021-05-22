@@ -17,7 +17,9 @@ namespace Assets.Scripts.Character
 
 		const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 		private bool m_Grounded;            // Whether or not the player is grounded.
-		public bool OnGround => m_Grounded;
+		private int m_GroundTimeOffset = 0;
+		private static readonly int m_GroundMaxTimeOffset = 5;
+		public bool OnGround => m_Grounded || m_GroundTimeOffset > 0;
 		const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 		private Rigidbody2D m_Rigidbody2D;
 		public Rigidbody2D RigidyBody => m_Rigidbody2D;
@@ -35,7 +37,7 @@ namespace Assets.Scripts.Character
 		public BoolEvent OnCrouchEvent;
 		private bool m_wasCrouching = false;
 
-		private void Awake()
+        private void Awake()
 		{
 			m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -59,6 +61,7 @@ namespace Assets.Scripts.Character
 				if (colliders[i].gameObject != gameObject)
 				{
 					m_Grounded = true;
+					m_GroundTimeOffset = m_GroundMaxTimeOffset;
 					if (!wasGrounded)
 						OnLandEvent.Invoke();
 				}
@@ -83,8 +86,13 @@ namespace Assets.Scripts.Character
 				}
 			}
 
+			if (m_GroundTimeOffset > 0)
+            {
+				m_GroundTimeOffset--;
+			}
+
 			//only control the player if grounded or airControl is turned on
-			if (m_Grounded || m_AirControl)
+			if (OnGround || m_AirControl)
 			{
 
 				// If crouching
@@ -135,10 +143,11 @@ namespace Assets.Scripts.Character
 				}
 			}
 			// If the player should jump...
-			if (m_Grounded && jump)
+			if (OnGround && jump)
 			{
 				// Add a vertical force to the player.
 				m_Grounded = false;
+				m_GroundTimeOffset = 0;
 				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			}
 		}
