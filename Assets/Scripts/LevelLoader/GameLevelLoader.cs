@@ -17,7 +17,7 @@ public class GameLevelLoader : MonoBehaviour
         {
             Instance = this;
             currentLevel = levels[index];
-            //currentLevel?.gameObject.SetActive(true);
+            currentLevel?.gameObject.SetActive(true);
         } else
         {
             Destroy(Instance);
