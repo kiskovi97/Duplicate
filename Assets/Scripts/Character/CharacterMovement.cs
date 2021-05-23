@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Character
 {
@@ -14,6 +15,7 @@ namespace Assets.Scripts.Character
     public class CharacterMovement : MonoBehaviour, CharacterControls.ICharacterActions
     {
         public float maxSpeed = 10f;
+        public Text cloneText;
 
         internal void DestoryPlayer()
         {
@@ -23,10 +25,11 @@ namespace Assets.Scripts.Character
 
         internal static void Reset()
         {
-            foreach(var gameObject in clones)
+            foreach (var gameObject in clones)
             {
                 Destroy(gameObject);
             }
+            clones.Clear();
         }
 
         public float jumpForce = 10f;
@@ -41,7 +44,7 @@ namespace Assets.Scripts.Character
 
         public bool IsPrime => Primal;
         public static CharacterMovement PrimeObject => PrimalObj;
-        public static List<GameObject> clones = new List<GameObject>(); 
+        public static List<GameObject> clones = new List<GameObject>();
 
         public Animator animator;
 
@@ -81,6 +84,12 @@ namespace Assets.Scripts.Character
                 PrimalObj = this;
         }
 
+        private void Update()
+        {
+            if (cloneText != null)
+                cloneText.text = "Cloning: " + clones.Count + " / " + maxNumberOfClones;
+        }
+
         private void FixedUpdate()
         {
             var speed = maxSpeed * lastValue * Time.fixedDeltaTime;
@@ -90,7 +99,7 @@ namespace Assets.Scripts.Character
             controller2D.Move(speed, false, isJumping);
             animator.SetBool("OnGround", controller2D.OnGround);
             var info = animator.GetCurrentAnimatorStateInfo(0);
-            
+
             animator.speed = Mathf.Abs(info.IsName("Walking") ? speed : 3f);
             isJumping = false;
         }
