@@ -22,6 +22,20 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var player = collision.gameObject.GetComponent<CharacterMovement>();
+        if (player != null && !collided)
+        {
+            if (player.IsPrime)
+            {
+                DoPrimeExit(player);
+            }
+            DoAnyCollisionExit(player);
+            collided = true;
+        }
+    }
+
     void Update()
     {
         collided = false;
@@ -32,6 +46,15 @@ public class Obstacle : MonoBehaviour
     }
 
     protected virtual void DoPrime(CharacterMovement player)
+    {
+    }
+
+
+    protected virtual void DoAnyCollisionExit(CharacterMovement player)
+    {
+    }
+
+    protected virtual void DoPrimeExit(CharacterMovement player)
     {
     }
 }
