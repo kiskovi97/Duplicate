@@ -8,7 +8,7 @@ public class GameLevelLoader : MonoBehaviour
     private static GameLevelLoader Instance;
 
     public List<Level> levels;
-    private int index = 0;
+    public int currentLevelIndex = 0;
     private Level currentLevel;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class GameLevelLoader : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            currentLevel = levels[index];
+            currentLevel = levels[currentLevelIndex];
             currentLevel?.gameObject.SetActive(true);
         } else
         {
@@ -60,10 +60,10 @@ public class GameLevelLoader : MonoBehaviour
     {
         currentLevel?.gameObject.SetActive(false);
         Debug.Log(currentLevel?.gameObject.name + " Unload");
-        index++;
-        if (index < levels.Count)
+        currentLevelIndex++;
+        if (currentLevelIndex < levels.Count)
         {
-            currentLevel = levels[index];
+            currentLevel = levels[currentLevelIndex];
             Debug.Log(currentLevel?.gameObject.name + " Loaded");
             currentLevel?.gameObject.SetActive(true);
         } else
