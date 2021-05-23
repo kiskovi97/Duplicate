@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Corners : Obstacle
+public class Destroyer : Obstacle
 {
     protected override void DoPrime(CharacterMovement player)
     {
@@ -11,13 +11,9 @@ public class Corners : Obstacle
         GameLevelLoader._ReLoadLevel();
     }
 
-    protected override void DoAnyCollision(CharacterMovement player)
+    protected override void NotPrime(CharacterMovement player)
     {
-        base.DoAnyCollision(player);
-        if (!player.IsPrime)
-        {
-            player.DestoryPlayer();
-        }
-        
+        base.NotPrime(player);
+        player.DestoryPlayer();
     }
 }

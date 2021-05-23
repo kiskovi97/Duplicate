@@ -16,6 +16,9 @@ public class Obstacle : MonoBehaviour
             if (player.IsPrime)
             {
                 DoPrime(player);
+            } else
+            {
+                NotPrime(player);
             }
             DoAnyCollision(player);
             collided = true;
@@ -30,6 +33,9 @@ public class Obstacle : MonoBehaviour
             if (player.IsPrime)
             {
                 DoPrimeExit(player);
+            } else
+            {
+                NotPrimeExit(player);
             }
             DoAnyCollisionExit(player);
             collided = true;
@@ -49,12 +55,20 @@ public class Obstacle : MonoBehaviour
     {
     }
 
+    protected virtual void NotPrime(CharacterMovement player)
+    {
+    }
+
 
     protected virtual void DoAnyCollisionExit(CharacterMovement player)
     {
     }
 
     protected virtual void DoPrimeExit(CharacterMovement player)
+    {
+    }
+
+    protected virtual void NotPrimeExit(CharacterMovement player)
     {
     }
 }
