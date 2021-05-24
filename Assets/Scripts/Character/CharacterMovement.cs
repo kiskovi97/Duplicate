@@ -33,7 +33,7 @@ namespace Assets.Scripts.Character
         }
 
         public float jumpForce = 10f;
-        public static int maxNumberOfClones = 3;
+        public static int maxNumberOfClones = 0;
 
         protected CharacterController2D controller2D;
         private float lastValue = 0f;

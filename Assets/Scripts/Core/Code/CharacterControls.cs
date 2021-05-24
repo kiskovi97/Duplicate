@@ -113,7 +113,7 @@ public class @CharacterControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fa32fdd6-7819-4627-94b5-456840c791da"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
