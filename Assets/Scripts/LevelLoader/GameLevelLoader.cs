@@ -22,6 +22,7 @@ public class GameLevelLoader : MonoBehaviour
             Instance = this;
             currentLevel = levels[currentLevelIndex];
             currentLevel?.gameObject.SetActive(true);
+            GameplayController.score = currentLevelIndex;
         } else
         {
             Destroy(Instance);
@@ -38,7 +39,7 @@ public class GameLevelLoader : MonoBehaviour
 
     public static void _LoadNextLevel()
     {
-        if (Instance !=null)
+        if (Instance != null)
         {
             Instance.LoadNextLevel();
         }
@@ -69,14 +70,20 @@ public class GameLevelLoader : MonoBehaviour
         currentLevelIndex++;
         if (currentLevelIndex < levels.Count)
         {
+            GameplayController.score = currentLevelIndex;
             currentLevel = levels[currentLevelIndex];
             Debug.Log(currentLevel?.gameObject.name + " Loaded");
             currentLevel?.gameObject.SetActive(true);
         } else
         {
-            currentLevel?.gameObject.SetActive(true);
-            Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
-            controller.ExitClicked();
+            GameOver();
         }
+    }
+
+    public void GameOver()
+    {
+        currentLevel?.gameObject.SetActive(true);
+        Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
+        controller.ExitClicked();
     }
 }

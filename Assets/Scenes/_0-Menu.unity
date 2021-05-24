@@ -744,6 +744,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1388959103217238537, guid: 084b46eafef80e1409a3b119940b68d3, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
+    - target: {fileID: 1388959104065339402, guid: 084b46eafef80e1409a3b119940b68d3, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 1388959104729447907, guid: 084b46eafef80e1409a3b119940b68d3, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -764,6 +772,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1388959104757170903, guid: 084b46eafef80e1409a3b119940b68d3, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 1388959104971735008, guid: 084b46eafef80e1409a3b119940b68d3, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -872,6 +884,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6720302820143828653, guid: 084b46eafef80e1409a3b119940b68d3, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 6720302821448937799, guid: 084b46eafef80e1409a3b119940b68d3, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0

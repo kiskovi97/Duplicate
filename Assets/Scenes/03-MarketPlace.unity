@@ -963,6 +963,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 981313493630413042, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 7351079548100013979, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
       propertyPath: m_Name
       value: MarketPlacePanel
@@ -1051,6 +1055,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8727757688089177539, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 8727757689259758121, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1071,6 +1079,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8727757689259758121, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 248.26544
+      objectReference: {fileID: 0}
     - target: {fileID: 9018844292820505276, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1091,6 +1103,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018844293659258198, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6016f9f6da52ecc43be688d7badeaf97, type: 3}
 --- !u!1 &7351079547400218569 stripped

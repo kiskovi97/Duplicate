@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 882842800}
   - component: {fileID: 882842801}
   m_Layer: 0
-  m_Name: LevelLoader
+  m_Name: GameLevelLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,7 +955,7 @@ MonoBehaviour:
   - {fileID: 111359606}
   - {fileID: 1669510941}
   - {fileID: 1698610688}
-  currentLevelIndex: 9
+  currentLevelIndex: 0
   controller: {fileID: 2824302098191316414}
 --- !u!1 &1012568604
 GameObject:
@@ -1728,7 +1728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6781616026489777395, guid: 54fca346ea6cbd34e97a7bfc37cd987c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54fca346ea6cbd34e97a7bfc37cd987c, type: 3}
@@ -5050,7 +5050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6781616026489777395, guid: 178bfbfb8d2597840b8d22d7fd44e0df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178bfbfb8d2597840b8d22d7fd44e0df, type: 3}

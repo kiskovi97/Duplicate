@@ -585,6 +585,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 607851342483989336, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 1435603167728069275, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -605,6 +609,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1435603168701781361, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
+    - target: {fileID: 2606254489688424329, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
+    - target: {fileID: 3130357401086852104, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 3130357402196870114, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -625,6 +641,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3406732330023190713, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 3406732331399085907, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -733,6 +753,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DashboardPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3484760851149555344, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 3484760851149555345, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -773,6 +797,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7882758231252718034, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e99802cb1d58ced4eb1a7e573b58c431, type: 3}
     - target: {fileID: 9114532667171214129, guid: 25ed316303cb1054f9bb1c5cb9f8dd43, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
