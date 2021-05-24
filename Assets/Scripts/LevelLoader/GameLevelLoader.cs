@@ -13,6 +13,7 @@ public class GameLevelLoader : MonoBehaviour
     private Level currentLevel;
 
     public static event Action OnReset;
+    public GameplayController controller;
 
     private void Awake()
     {
@@ -73,12 +74,9 @@ public class GameLevelLoader : MonoBehaviour
             currentLevel?.gameObject.SetActive(true);
         } else
         {
-
-
-            UIScreenManager.GoToDashboardScreen();
-
             currentLevel?.gameObject.SetActive(true);
             Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
+            controller.ExitClicked();
         }
     }
 }
