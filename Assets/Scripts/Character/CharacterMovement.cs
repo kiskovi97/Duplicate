@@ -33,13 +33,14 @@ namespace Assets.Scripts.Character
         }
 
         public float jumpForce = 10f;
-        public static int maxNumberOfClones = 0;
+        public static int maxNumberOfClones = 3;
 
         protected CharacterController2D controller2D;
         private float lastValue = 0f;
         private bool isJumping = false;
         private bool Primal = true;
         private static CharacterMovement PrimalObj;
+        private static float maxDistance = 10f;
         public UnityEngine.Experimental.Rendering.Universal.Light2D primalLight;
         private static int CloneCount => clones.Count;
 
@@ -51,6 +52,7 @@ namespace Assets.Scripts.Character
 
         public GameObject cloneImage;
         public Transform clonePanel;
+        public Transform centerPosition;
 
         public void OnDuplicate(InputAction.CallbackContext context)
         {
@@ -106,6 +108,33 @@ namespace Assets.Scripts.Character
             {
                 primalLight.enabled = Primal;
             }
+
+            if (centerPosition != null && Primal)
+            {
+                if (clones.Count > 0)
+                {
+                    Vector3 localGoal = Vector3.zero;
+                    foreach (var localPosition in clones.Select(clone => clone.transform.position - transform.position))
+                    {
+                        var pos = localPosition;
+                        if (pos.magnitude > maxDistance)
+                        {
+                            pos = pos.normalized * maxDistance;
+                        }
+                        localGoal += pos / clones.Count;
+                    }
+
+                    localGoal /= 2f;
+                    var positionGoal = localGoal + transform.position;
+                    Debug.DrawLine(transform.position, positionGoal, Color.red);
+                    centerPosition.position = positionGoal;
+                    //centerPosition.position + (positionGoal - centerPosition.position).normalized * Time.deltaTime;
+                }
+                else
+                {
+                    centerPosition.position = transform.position;
+                }
+            } 
         }
 
         private void FixedUpdate()
