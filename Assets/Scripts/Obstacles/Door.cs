@@ -23,7 +23,10 @@ namespace Assets.Scripts.Obstacles
             var isCenter = collision.contacts.Sum(coll => coll.normal.y) > 0f;
             if (player != null && isCenter)
             {
-                GameLevelLoader._ReLoadLevel();
+                if (player.IsPrime)
+                    GameLevelLoader._ReLoadLevel();
+                else
+                    player.DestoryPlayer();
             }
         }
 

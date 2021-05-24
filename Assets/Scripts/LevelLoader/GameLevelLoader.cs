@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using URPTemplate.UI;
 
 public class GameLevelLoader : MonoBehaviour
 {
@@ -72,6 +73,10 @@ public class GameLevelLoader : MonoBehaviour
             currentLevel?.gameObject.SetActive(true);
         } else
         {
+
+
+            UIScreenManager.GoToDashboardScreen();
+
             currentLevel?.gameObject.SetActive(true);
             Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
         }
