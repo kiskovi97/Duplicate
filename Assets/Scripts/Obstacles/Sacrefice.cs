@@ -17,5 +17,15 @@ namespace Assets.Scripts.Obstacles
             player.DestoryPlayer();
             door.Open();
         }
+
+        private void Awake()
+        {
+            GameLevelLoader.OnReset += GameLevelLoader_OnReset;
+        }
+
+        private void GameLevelLoader_OnReset()
+        {
+            door.Close();
+        }
     }
 }

@@ -11,6 +11,8 @@ public class GameLevelLoader : MonoBehaviour
     public int currentLevelIndex = 0;
     private Level currentLevel;
 
+    public static event Action OnReset;
+
     private void Awake()
     {
         if (Instance == null)
@@ -38,6 +40,7 @@ public class GameLevelLoader : MonoBehaviour
         {
             Instance.LoadNextLevel();
         }
+        OnReset?.Invoke();
     }
 
     public static void _ReLoadLevel()
@@ -46,6 +49,7 @@ public class GameLevelLoader : MonoBehaviour
         {
             Instance.ReLoadLevel();
         }
+        OnReset?.Invoke();
     }
 
     private void ReLoadLevel()
