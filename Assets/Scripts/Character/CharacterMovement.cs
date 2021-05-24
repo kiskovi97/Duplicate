@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.LWRP;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -15,7 +16,6 @@ namespace Assets.Scripts.Character
     public class CharacterMovement : MonoBehaviour, CharacterControls.ICharacterActions
     {
         public float maxSpeed = 10f;
-        public Text cloneText;
 
         internal void DestoryPlayer()
         {
@@ -33,13 +33,14 @@ namespace Assets.Scripts.Character
         }
 
         public float jumpForce = 10f;
-        public int maxNumberOfClones = 4;
+        public static int maxNumberOfClones = 0;
 
         protected CharacterController2D controller2D;
         private float lastValue = 0f;
         private bool isJumping = false;
         private bool Primal = true;
         private static CharacterMovement PrimalObj;
+        public UnityEngine.Experimental.Rendering.Universal.Light2D primalLight;
         private static int CloneCount => clones.Count;
 
         public bool IsPrime => Primal;
@@ -47,6 +48,9 @@ namespace Assets.Scripts.Character
         public static List<GameObject> clones = new List<GameObject>();
 
         public Animator animator;
+
+        public GameObject cloneImage;
+        public Transform clonePanel;
 
         public void OnDuplicate(InputAction.CallbackContext context)
         {
@@ -86,8 +90,22 @@ namespace Assets.Scripts.Character
 
         private void Update()
         {
-            if (cloneText != null)
-                cloneText.text = "Cloning: " + clones.Count + " / " + maxNumberOfClones;
+            if (clonePanel != null)
+            {
+                var diffrence = clonePanel.childCount - (maxNumberOfClones - clones.Count);
+                if (diffrence > 0)
+                {
+                    Destroy(clonePanel.GetChild(0).gameObject);
+                }
+                if (diffrence < 0)
+                {
+                    Instantiate(cloneImage, clonePanel);
+                }
+            }
+            if (primalLight != null)
+            {
+                primalLight.enabled = Primal;
+            }
         }
 
         private void FixedUpdate()
