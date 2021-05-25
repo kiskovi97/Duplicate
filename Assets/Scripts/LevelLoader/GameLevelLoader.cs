@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Character;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class GameLevelLoader : MonoBehaviour
             currentLevel = levels[currentLevelIndex];
             currentLevel?.gameObject.SetActive(true);
             GameplayController.score = currentLevelIndex;
+            CharacterMovement.maxNumberOfClones = 0;
+            CharacterMovement.Reset();
         } else
         {
             Destroy(Instance);
