@@ -183,6 +183,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7366663068769951251, guid: fcc0373900ac45d49a6747cbf5fb1870, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366663068769951251, guid: fcc0373900ac45d49a6747cbf5fb1870, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366663068769951251, guid: fcc0373900ac45d49a6747cbf5fb1870, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc0373900ac45d49a6747cbf5fb1870, type: 3}
 --- !u!1001 &998168050
@@ -262,11 +274,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668586788538786233, guid: 4428fe84b7f68c848b69330b11d1e4aa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668586788538786233, guid: 4428fe84b7f68c848b69330b11d1e4aa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668586788538786233, guid: 4428fe84b7f68c848b69330b11d1e4aa, type: 3}
       propertyPath: m_Pivot.x
