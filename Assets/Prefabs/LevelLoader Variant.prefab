@@ -100,15 +100,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fa23b40e37d1e7f449d43b6dd4f5fcd3, type: 2}
     - target: {fileID: 7614091643693408082, guid: 8b6037762d0f5df48a7f17fbf96d5a8d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1301.2263
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7614091643693408082, guid: 8b6037762d0f5df48a7f17fbf96d5a8d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7614091643693408082, guid: 8b6037762d0f5df48a7f17fbf96d5a8d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7614091643693408082, guid: 8b6037762d0f5df48a7f17fbf96d5a8d, type: 3}
       propertyPath: m_AnchoredPosition.y
