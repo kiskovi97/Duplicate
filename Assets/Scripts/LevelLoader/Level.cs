@@ -7,6 +7,7 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     public Transform startDoor;
+    public int minimumCloneCount = 0;
 
     void OnEnable()
     {
@@ -20,6 +21,7 @@ public class Level : MonoBehaviour
 
     private void UnLoad()
     {
+        CharacterMovement.IsPlaying = false;
     }
 
     internal void Load()
@@ -27,7 +29,8 @@ public class Level : MonoBehaviour
         if (CharacterMovement.PrimeObject != null)
         {
             CharacterMovement.PrimeObject.transform.position = startDoor.position;
-            CharacterMovement.Reset();
+            CharacterMovement.Reset(minimumCloneCount);
+            CharacterMovement.IsPlaying = true;
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using URPTemplate.Database;
 using URPTemplate.UI;
 
 public class GameLevelLoader : MonoBehaviour
@@ -16,20 +17,48 @@ public class GameLevelLoader : MonoBehaviour
     public static event Action OnReset;
     public GameplayController controller;
 
+    public GameObject firstPanel;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            currentLevel = levels[currentLevelIndex];
-            currentLevel?.gameObject.SetActive(true);
-            GameplayController.score = currentLevelIndex;
-            CharacterMovement.maxNumberOfClones = 0;
-            CharacterMovement.Reset();
+            firstPanel.SetActive(true);
+            CharacterMovement.IsPlaying = false;
         } else
         {
             Destroy(Instance);
         }
+    }
+
+    public void StartNew()
+    {
+        currentLevelIndex = 0;
+        firstPanel.SetActive(false);
+
+        currentLevel = levels[currentLevelIndex];
+        currentLevel?.gameObject.SetActive(true);
+        GameplayController.score = currentLevelIndex;
+        CharacterMovement.maxNumberOfClones = 0;
+        currentLevel.Load();
+    }
+
+    public void ResumeLast()
+    {
+        currentLevelIndex = 0;
+        firstPanel.SetActive(false);
+        var score = DatabaseTables.scoreTable.GetById(GameplayController.userName);
+        if (score != null)
+        {
+            currentLevelIndex = (int)score.score;
+        }
+
+        currentLevel = levels[currentLevelIndex];
+        currentLevel?.gameObject.SetActive(true);
+        GameplayController.score = currentLevelIndex;
+        CharacterMovement.maxNumberOfClones = 0;
+        currentLevel.Load();
     }
 
     private void OnDestroy()
@@ -85,6 +114,7 @@ public class GameLevelLoader : MonoBehaviour
 
     public void GameOver()
     {
+        CharacterMovement.IsPlaying = false;
         currentLevel?.gameObject.SetActive(true);
         Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
         controller.ExitClicked();

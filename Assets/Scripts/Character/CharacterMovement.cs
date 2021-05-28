@@ -23,13 +23,14 @@ namespace Assets.Scripts.Character
             Destroy(gameObject);
         }
 
-        internal static void Reset()
+        internal static void Reset(int CloneCount)
         {
             foreach (var gameObject in clones)
             {
                 Destroy(gameObject);
             }
             clones.Clear();
+            maxNumberOfClones = CloneCount;
         }
 
         public float jumpForce = 10f;
@@ -53,6 +54,8 @@ namespace Assets.Scripts.Character
         public GameObject cloneImage;
         public Transform clonePanel;
         public Transform centerPosition;
+
+        public static bool IsPlaying { get; set; } = false;
 
         public void OnDuplicate(InputAction.CallbackContext context)
         {
@@ -92,6 +95,7 @@ namespace Assets.Scripts.Character
 
         private void Update()
         {
+            controller2D.RigidyBody.simulated = IsPlaying;
             if (clonePanel != null)
             {
                 var diffrence = clonePanel.childCount - (maxNumberOfClones - clones.Count);

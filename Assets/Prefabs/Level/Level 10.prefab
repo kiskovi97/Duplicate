@@ -13764,7 +13764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2957464410784880495, guid: e6231491b2aff3a43979fbf085330cb4, type: 3}
       propertyPath: m_Name
-      value: Level 8
+      value: Level 10
       objectReference: {fileID: 0}
     - target: {fileID: 3066312562865192985, guid: e6231491b2aff3a43979fbf085330cb4, type: 3}
       propertyPath: m_MaskInteraction
@@ -13777,6 +13777,10 @@ PrefabInstance:
     - target: {fileID: 4484659056997013252, guid: e6231491b2aff3a43979fbf085330cb4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -7.5039997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768896880394850653, guid: e6231491b2aff3a43979fbf085330cb4, type: 3}
+      propertyPath: minimumCloneCount
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6231491b2aff3a43979fbf085330cb4, type: 3}
