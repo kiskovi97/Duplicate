@@ -98,7 +98,7 @@ namespace Assets.Scripts.Character
             controller2D.RigidyBody.simulated = IsPlaying;
             if (clonePanel != null)
             {
-                var diffrence = clonePanel.childCount - (maxNumberOfClones - clones.Count);
+                var diffrence = clonePanel.childCount - maxNumberOfClones;
                 if (diffrence > 0)
                 {
                     Destroy(clonePanel.GetChild(0).gameObject);
@@ -106,6 +106,11 @@ namespace Assets.Scripts.Character
                 if (diffrence < 0)
                 {
                     Instantiate(cloneImage, clonePanel);
+                }
+                for (int i=0; i< maxNumberOfClones && i < clonePanel.childCount; i++)
+                {
+                    var image = clonePanel.GetChild(i).GetComponent<Image>();
+                    image.color = new Color(1, 1, 1, i >= clones.Count ? 1f : 0.2f);
                 }
             }
             if (primalLight != null)
