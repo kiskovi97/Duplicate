@@ -2244,6 +2244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDoor: {fileID: 1529193521456016342}
+  minimumCloneCount: 0
 --- !u!1 &4604017948446540565
 GameObject:
   m_ObjectHideFlags: 0

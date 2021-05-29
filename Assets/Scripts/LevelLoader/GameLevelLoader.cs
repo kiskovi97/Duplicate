@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using URPTemplate.Database;
 using URPTemplate.UI;
 
@@ -18,6 +19,7 @@ public class GameLevelLoader : MonoBehaviour
     public GameplayController controller;
 
     public GameObject firstPanel;
+    public Text levelNameText;
 
     private void Awake()
     {
@@ -26,7 +28,8 @@ public class GameLevelLoader : MonoBehaviour
             Instance = this;
             firstPanel.SetActive(true);
             CharacterMovement.IsPlaying = false;
-        } else
+        }
+        else
         {
             Destroy(Instance);
         }
@@ -35,30 +38,18 @@ public class GameLevelLoader : MonoBehaviour
     public void StartNew()
     {
         currentLevelIndex = 0;
-        firstPanel.SetActive(false);
-
-        currentLevel = levels[currentLevelIndex];
-        currentLevel?.gameObject.SetActive(true);
-        GameplayController.score = currentLevelIndex;
-        CharacterMovement.maxNumberOfClones = 0;
-        currentLevel.Load();
+        LoadLevel(currentLevelIndex);
     }
 
     public void ResumeLast()
     {
         currentLevelIndex = 0;
-        firstPanel.SetActive(false);
         var score = DatabaseTables.scoreTable.GetById(GameplayController.userName);
         if (score != null)
         {
             currentLevelIndex = (int)score.score;
         }
-
-        currentLevel = levels[currentLevelIndex];
-        currentLevel?.gameObject.SetActive(true);
-        GameplayController.score = currentLevelIndex;
-        CharacterMovement.maxNumberOfClones = 0;
-        currentLevel.Load();
+        LoadLevel(currentLevelIndex);
     }
 
     private void OnDestroy()
@@ -102,14 +93,25 @@ public class GameLevelLoader : MonoBehaviour
         currentLevelIndex++;
         if (currentLevelIndex < levels.Count)
         {
-            GameplayController.score = currentLevelIndex;
-            currentLevel = levels[currentLevelIndex];
-            Debug.Log(currentLevel?.gameObject.name + " Loaded");
-            currentLevel?.gameObject.SetActive(true);
-        } else
+            LoadLevel(currentLevelIndex);
+        }
+        else
         {
             GameOver();
         }
+    }
+
+    private void LoadLevel(int index)
+    {
+        firstPanel.SetActive(false);
+        if (levelNameText != null)
+            levelNameText.text = "Level " + (index + 1).ToString();
+
+        GameplayController.score = index;
+        currentLevel = levels[index];
+        Debug.Log(currentLevel?.gameObject.name + " Loaded");
+        currentLevel?.gameObject.SetActive(true);
+        currentLevel.Load();
     }
 
     public void GameOver()
