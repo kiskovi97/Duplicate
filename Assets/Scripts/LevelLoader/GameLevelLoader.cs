@@ -78,14 +78,6 @@ public class GameLevelLoader : MonoBehaviour
         OnReset?.Invoke();
     }
 
-    private void ReLoadLevel()
-    {
-        currentLevel?.gameObject.SetActive(false);
-        Debug.Log(currentLevel?.gameObject.name + " Unload");
-        currentLevel?.gameObject.SetActive(true);
-        Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
-    }
-
     private void LoadNextLevel()
     {
         currentLevel?.gameObject.SetActive(false);
@@ -111,6 +103,16 @@ public class GameLevelLoader : MonoBehaviour
         currentLevel = levels[index];
         Debug.Log(currentLevel?.gameObject.name + " Loaded");
         currentLevel?.gameObject.SetActive(true);
+        currentLevel.Load();
+    }
+
+    private void ReLoadLevel()
+    {
+        firstPanel.SetActive(false);
+        currentLevel?.gameObject.SetActive(false);
+        Debug.Log(currentLevel?.gameObject.name + " Unload");
+        currentLevel?.gameObject.SetActive(true);
+        Debug.Log(currentLevel?.gameObject.name + " ReLoaded");
         currentLevel.Load();
     }
 
