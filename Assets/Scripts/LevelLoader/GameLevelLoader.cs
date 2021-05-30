@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using URPTemplate.Database;
 using URPTemplate.UI;
@@ -19,6 +20,7 @@ public class GameLevelLoader : MonoBehaviour
     public GameplayController controller;
 
     public GameObject firstPanel;
+    public GameObject firstPanelFirstButton;
     public Text levelNameText;
 
     private void Awake()
@@ -27,6 +29,11 @@ public class GameLevelLoader : MonoBehaviour
         {
             Instance = this;
             firstPanel.SetActive(true);
+            if (firstPanelFirstButton != null)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(firstPanelFirstButton);
+            }
             CharacterMovement.IsPlaying = false;
         }
         else

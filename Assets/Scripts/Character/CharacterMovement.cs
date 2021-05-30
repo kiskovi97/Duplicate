@@ -55,6 +55,9 @@ namespace Assets.Scripts.Character
         public Transform clonePanel;
         public Transform centerPosition;
 
+        public Text jumpText;
+        public Text cloneText;
+
         public static bool IsPlaying { get; set; } = false;
 
         public void OnDuplicate(InputAction.CallbackContext context)
@@ -143,7 +146,9 @@ namespace Assets.Scripts.Character
                 {
                     centerPosition.position = transform.position;
                 }
-            } 
+            }
+            jumpText.gameObject.SetActive(controller2D.OnGround);
+            cloneText.gameObject.SetActive(clones.Count < maxNumberOfClones);
         }
 
         private void FixedUpdate()
