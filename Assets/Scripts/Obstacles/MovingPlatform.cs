@@ -17,7 +17,8 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        collision.collider.transform.SetParent(null);
+        if (gameObject.activeInHierarchy)
+            collision.collider.transform.SetParent(null);
     }
 
     // Start is called before the first frame update

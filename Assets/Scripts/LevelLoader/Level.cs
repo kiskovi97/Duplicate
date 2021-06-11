@@ -22,6 +22,7 @@ public class Level : MonoBehaviour
     private void UnLoad()
     {
         CharacterMovement.IsPlaying = false;
+        CharacterMovement.Reset(0);
     }
 
     internal void Load()

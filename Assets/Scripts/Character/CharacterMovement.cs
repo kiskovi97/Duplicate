@@ -31,6 +31,9 @@ namespace Assets.Scripts.Character
             }
             clones.Clear();
             maxNumberOfClones = CloneCount;
+            
+            PrimalObj.transform.SetParent(null);
+            PrimalObj.gameObject.SetActive(true);
         }
 
         public float jumpForce = 10f;
